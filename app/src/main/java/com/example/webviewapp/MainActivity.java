@@ -20,11 +20,12 @@ public class MainActivity extends AppCompatActivity {
     private WebView myWebView;
 
     public void showExternalWebPage(){
-        // TODO: Add your code for showing external web page here
+        // adding code to show external web page
+        this.myWebView.loadUrl("https://wwwlab.iit.his.se/a19rebsa/mobilapplikationsdesign/projektet.html");
     }
 
     public void showInternalWebPage(){
-        // adding internal web page
+        // adding code to show internal web page
         this.myWebView.loadUrl("file:///android_asset/about.html");
 
     }
@@ -93,11 +94,14 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_external_web) {
+            //calling method to show external web page
+            showExternalWebPage();
             Log.d("==>","Will display external web page");
             return true;
         }
 
         if (id == R.id.action_internal_web) {
+            //calling method to show internal web page
             showInternalWebPage();
             Log.d("==>","Will display internal web page");
             return true;
