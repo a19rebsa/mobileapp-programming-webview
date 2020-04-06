@@ -16,12 +16,17 @@ import androidx.appcompat.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    //deklarerar den privata variabeln myWebView
+    private WebView myWebView;
+
     public void showExternalWebPage(){
         // TODO: Add your code for showing external web page here
     }
 
     public void showInternalWebPage(){
-        // TODO: Add your code for showing internal web page here
+        // adding internal web page
+        this.myWebView.loadUrl("file:///android_asset/about.html");
+
     }
 
     @Override
@@ -31,13 +36,12 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //creating private member variable
-        WebView myWebView = (WebView) findViewById(R.id.my_webview);
+        //ger värde till variabeln myWebView
+        this.myWebView = (WebView) findViewById(R.id.my_webview);
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
 
-        
         /*
         * Rename your App. Tip: Values->Strings
         * Enable Internet access for your App. Tip: Manifest
@@ -94,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.action_internal_web) {
+            showInternalWebPage();
             Log.d("==>","Will display internal web page");
             return true;
         }

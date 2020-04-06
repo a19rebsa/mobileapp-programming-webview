@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dugga svg</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+  	#kaross {
+  		transform:translate(30px, 80px);
+  	}
+  	#line1 {
+  		transform:translate(35px,55px);
+  	}
+  	#line2 {
+  		transform:translate(47px, 55px);
+  	}
+  	#line3 {
+  		transform: translate(61px, 55px);
+  	}
+  	#roof1 {
+  		transform: translate(33px, 55px);
+  	}
+  	#pipe {
+  		transform: translate(75px, 70px);
+  	}
+  	#roof2 {
+  		transform: translate(33px,52px);
+  	}
+  	#btire {
+  		transform: translate(40px, 102px);
+  	}
+  	#nav1 {
+  		transform: translate(-11px, -2px);
+  	}
+  	#nav2 {
+  		transform: translate(-2px, -11px);
+  	}
+  	#ftire {
+  		transform: translate(94px, 110px);
+  	}
+  	#nav3 {
+  		transform: translate(-6px, -1px);
+  	}
+  	#nav4 {
+  		transform: translate(-1.5px, -6px);
+  	}
+  	#fume1 {
+  		transform: translate(72px,63px);
+  	}
+  	#fume2 {
+  		transform: translate(82px,63px);
+  	}
+  	#fume3 {
+  		transform: translate(78px,58px);
+  	}
+  	svg {
+  		background-image: linear-gradient(blue, grey, green 50%);
+  	}
+
+    @keyframes rise {
+        0% {
+            transform: translate(0px,0px);
+        }
+        50% {
+            transform: translate(20px,-60px) scale(1.3); opacity: 0:5;
+        }
+        75% {
+            transform: translate(15px, -85px) scale(1.5); opacity: 0:2;
+        }
+        100% {
+            transform: translate(10px,-110px) scale(1.7); opacity: 0;
+        }
+    }
+
+    #fumes {
+        animation-name: rise;
+        animation-duration: 1500ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        opacity:0.8;
+    }
+
+      @keyframes spinning {
+          0% {
+              transform: rotate(0deg);
+          }
+          100%
+           {
+              transform: rotate(360deg);
+          }
+      }
+
+      .wheel{
+          animation-name: spinning;
+          animation-duration: 4500ms;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          opacity:1;
+      }
+
+      @keyframes vehiclemoving {
+          0% {
+              transform: translate(-70px,0px);
+          }
+          50%
+           {
+              transform: translate(100px,0px);
+          }
+          100%
+           {
+              transform: translate(270px,0px);
+          }
+
+      }
+
+      #tractor{
+          animation-name: vehiclemoving;
+          animation-duration: 3000ms;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          opacity:0.8;
+      }
+  </style>
+<body>
+<svg width="100%"  version="1.1" viewBox="0 0 300 300"  preserveAspectRatio="none"
+     xmlns="http://www.w3.org/2000/svg"  style="border:2px dashed green;">>
+    <defs>
+        <circle id="sun" cx="0" cy="0" r="20" />
+        <linearGradient id="Gradient1" gradientTransform="rotate(90)">
+            <stop offset="20%" stop-color="gold" />
+            <stop offset="90%" stop-color="red" />
+        </linearGradient>
+        <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="lightblue"/>
+            <stop offset="40%" stop-color="grey" />
+            <stop offset="20%" stop-color="lightgreen"/>
+            <stop offset="20%" stop-color="green"/>
+    </defs>
+    <rect id="background" x="0" y="0" width="100%" height="100%" stroke="#000000" fill="url(#Gradient2)" />
+    <use x="5" y="5" xlink:href="#sun" fill="url('#Gradient1')" />
+    <g id="tractor">
+        <g id="tractorbody">
+            <rect id="kaross" x="0" y="0" width="65" height="30" fill="#F00" />
+            <line id="line1" x1="0" y1="0" x2="-3" y2="26" stroke="#F00" stroke-width="4" />
+            <line id="line2" x1="0" y1="0" x2="-2" y2="26" stroke="#F00" stroke-width="4" />
+            <line id="line3" x1="0" y1="0" x2="2" y2="26" stroke="#F00" stroke-width="4" />
+            <line id="roof1" x1="0" y1="0" x2="30" y2="0" stroke="#F00" stroke-width="3" />
+            <rect id="pipe" x="0" y="0" width="5" height="10" fill="#F00" />
+            <line id="roof2" x1="0" y1="0" x2="29" y2="0" stroke="#F00" stroke-width="4" stroke-linecap="round" />
+        </g>
+
+        <g id="btire">
+            <g class="wheel">
+                <circle cx="0" cy="0" r="18" fill="#F000000" />
+                <rect id="nav1" x="0" y="0" width="23" height="5" fill="#b9c9be" />
+                <rect id="nav2" x="0" y="0" width="5" height="23" fill="#b9c9be" />
+            </g>
+        </g>
+        <g id="ftire">
+            <g class="wheel">
+                <circle cx="0" cy="0" r="10" fill="#F000000"/>
+                <rect id="nav3" x="0" y="0" width="12" height="3" fill="#b9c9be" />
+                <rect id="nav4" x="0" y="0" width="3" height="12" fill="#b9c9be" />
+            </g>
+        </g>
+
+        <g id="fumes">
+            <ellipse id="fume1" fill="#1c1a1a" cx="0" cy="0" rx="8" ry="5"/>
+            <ellipse id="fume2" fill="#1c1a1a" cx="0" cy="0" rx="8" ry="5"/>
+            <ellipse id="fume3" fill="#1c1a1a" cx="0" cy="0" rx="8" ry="5"/>
+        </g>
+    </g>
+</svg>
+</body>
+</html>
